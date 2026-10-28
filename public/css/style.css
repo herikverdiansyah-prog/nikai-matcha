@@ -1,0 +1,767 @@
+/* Variabel Warna Utama */
+:root {
+    --forest: #142217;
+    --cream: #F5F2EB;
+    --matcha-soft: #8BA888;
+    --matcha-gold: #CCDC5D;
+}
+
+/* Reset Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--forest);
+    line-height: 1.6;
+}
+
+.navbar-container a {
+    text-decoration: none;
+    color: inherit;
+    /* Mengikuti warna teks container asli */
+}
+
+/* Container Utama Navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    /* Disamakan dengan padding standard section desktop kamu */
+    background-color: var(--cream);
+    /* Menggunakan variabel warna cream bawaan */
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    /* Menggunakan font-serif bawaan proyekmu */
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--forest);
+    /* Menggunakan warna forest utama */
+}
+
+/* Menu Navigasi Tengah */
+.nav-links {
+    display: flex;
+    gap: 40px;
+    /* Jarak antar menu */
+    margin-left: auto;
+    /* Mendorong menu ke kanan agar seimbang */
+    margin-right: 60px;
+    /* Jarak antara menu tengah dengan tombol aksi kanan */
+}
+
+.nav-item {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Menggunakan font utama body */
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--forest) !important;
+    /* Memaksa warna forest agar tidak membiru */
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--matcha-soft) !important;
+    /* Sentuhan warna hijau matcha soft saat hover */
+    opacity: 1;
+}
+
+/* Tombol Shop Now (Gaya Minimalis Aksen Kanan) */
+.btn-nav-accent {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--forest);
+    border-bottom: 2px solid var(--forest);
+    /* Garis bawah minimalis khas web elegan */
+    padding-bottom: 2px;
+    transition: 0.3s ease;
+}
+
+.btn-nav-accent:hover {
+    color: var(--matcha-soft);
+    border-bottom-color: var(--matcha-soft);
+}
+
+/* Responsif: Sembunyikan Navigasi di Layar HP (Mobile) */
+@media (max-width: 767px) {
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+}
+
+/* Pengaturan Seksi Umum - Menggunakan Tinggi Fleksibel */
+section {
+    padding: 60px 24px;
+    width: 100%;
+    min-height: auto;
+    /* Mengganti tinggi statis agar pas di semua device */
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-light {
+    background-color: var(--cream);
+    color: var(--forest);
+}
+
+.bg-dark {
+    background-color: var(--forest);
+    color: var(--cream);
+}
+
+/* Tata Letak Grid Utama - Mobile First (Satu Kolom di HP) */
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Tipografi Responsif */
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    color: var(--matcha-soft);
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Tombol Responsif */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--forest);
+    color: var(--cream);
+    padding: 14px 28px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+.btn-accent {
+    display: inline-block;
+    background-color: var(--matcha-gold);
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+    /* Lebar penuh di HP */
+    text-align: center;
+}
+
+/* Gambar Responsif */
+.image-desktop {
+    width: 100%;
+    height: 300px;
+    /* Lebih pendek di HP */
+    background-color: #d4d4d8;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Grid Koleksi Produk Responsif */
+/* Grid System Utama */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Membatasi lebar minimum kolom */
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Grid System Utama */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Membatasi lebar minimum kolom */
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+}
+
+.btn-plus {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cream);
+    color: var(--forest);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grid 4 Kolom Keunggulan Responsif */
+.grid-4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Satu kolom di HP */
+    gap: 20px;
+}
+
+/* Komponen Manfaat & Footer Responsif */
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.benefit-item {
+    padding: 14px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px;
+    border-radius: 24px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    background-color: var(--forest);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 6px 6px 12px;
+    border-radius: 9999px;
+    margin-top: 16px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+.btn-next {
+    background-color: var(--cream);
+    color: var(--forest);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERY: DESKTOP & LAPTOP (Ukuran Layar Lebar)
+   Semua kode di bawah ini HANYA aktif saat website dibuka di layar lebar.
+   ========================================================================== */
+@media (min-width: 768px) {
+    nav {
+        padding: 24px 8%;
+    }
+
+    section {
+        padding: 80px 8%;
+    }
+
+    .container-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Berubah jadi 2 kolom berdampingan */
+        gap: 64px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .image-desktop {
+        height: 500px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        /* Berjejer rapi ke samping */
+        gap: 24px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 di tablet/PC medium */
+        gap: 32px;
+    }
+
+    .btn-accent {
+        width: fit-content;
+    }
+
+    /* Tombol kembali mengecil proporsional */
+}
+
+@media (min-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 kolom penuh ke samping di monitor PC besar */
+    }
+}
+
+/* ==========================================================================
+   HALAMAN DASHBOARD ADMIN
+   ========================================================================== */
+.admin-body {
+    background-color: var(--cream);
+    color: var(--forest);
+    padding: 40px 8%;
+}
+
+.admin-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.table-container {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 14px;
+    border-bottom: 2px solid var(--cream);
+    color: #555;
+    font-weight: 600;
+}
+
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--cream);
+}
+
+.status-badge {
+    background-color: #ffeeba;
+    color: #856404;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-badge.complete {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* ==========================================================================
+   DESAIN TOMBOL SELESAI ADMIN
+   ========================================================================== */
+.btn-complete {
+    background-color: var(--forest, #142217);
+    color: var(--cream, #F5F2EB);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-complete:hover {
+    background-color: var(--matcha-soft, #8BA888);
+    color: var(--forest, #142217);
+}
+
+/* Warna badge saat pesanan selesai */
+.status-badge.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* ==========================================================================
+   HALAMAN DAFTAR KATALOG PRODUK (STYLE MATCHA BALI)
+   ========================================================================== */
+.catalog-page-body {
+    background-color: var(--cream, #F5F2EB);
+    margin: 0;
+}
+
+.catalog-main {
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.catalog-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--forest, #142217);
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.catalog-subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 48px;
+}
+
+/* Grid System */
+.product-card {
+    background: #ffffff;
+    /* Mengubah background menjadi putih agar menyatu */
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    /* Bayangan halus */
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+/* .product-card {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Bungkus Gambar */
+.product-image-wrapper {
+    position: relative;
+    background-color: #F8F6F2;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    /* Diubah menjadi kotak 1:1 agar gambar produk presisi */
+    overflow: hidden;
+    width: 100%;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Agar gambar memenuhi kotak dengan rapi tanpa pecah */
+    border-radius: 12px;
+}
+
+.sale-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: #fff;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border: 1px solid #eee;
+}
+
+/* Informasi Teks */
+.product-info {
+    padding: 20px 4px 4px 4px;
+    /* Tambah padding agar ada jarak dari gambar */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest, #142217);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    min-height: 44px;
+    /* Menjaga tinggi agar teks panjang tetap sejajar */
+}
+
+.old-price {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+    margin: 0 0 2px 0;
+}
+
+.current-price {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}
+
+.current-price span {
+    font-weight: 600;
+    color: var(--forest, #142217);
+}
+
+/* ==========================================================================
+   HALAMAN DETAIL PRODUK
+   ========================================================================== */
+.product-detail-body {
+    background-color: var(--cream, #F5F2EB);
+    margin: 0;
+}
+
+.detail-container {
+    display: flex;
+    gap: 60px;
+    padding: 60px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.detail-image-section {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.detail-image-section img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.detail-info-section {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.detail-category {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.detail-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--forest, #142217);
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.detail-price-box {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-old-price {
+    font-size: 16px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.detail-current-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--forest, #142217);
+}
+
+.detail-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.btn-buy-now {
+    background-color: var(--forest, #142217);
+    color: var(--cream, #F5F2EB);
+    border: none;
+    width: 100%;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy-now:hover {
+    background-color: var(--matcha-soft, #8BA888);
+    color: var(--forest, #142217);
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .detail-container {
+        flex-direction: column;
+        padding: 30px 8%;
+        gap: 30px;
+    }
+}
+
+/* ==========================================================================
+   HALAMAN INVOICE NOTA PEMBAYARAN (SIMULASI LOKAL)
+   ========================================================================== */
+.invoice-body {
+    background-color: var(--cream, #F5F2EB);
+    margin: 0;
+}
+
+.invoice-card {
+    background: #ffffff;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.invoice-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--forest, #142217);
+    margin-bottom: 24px;
+    font-size: 32px;
+}
+
+.bank-box {
+    background: #F8F6F2;
+    padding: 20px;
+    border-radius: 16px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.bank-num {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--forest, #142217);
+    letter-spacing: 1px;
+    margin: 6px 0;
+}
+
+.btn-back {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: var(--forest, #142217);
+    color: var(--cream, #F5F2EB);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn-back:hover {
+    background-color: var(--matcha-soft, #8BA888);
+    color: var(--forest, #142217);
+}

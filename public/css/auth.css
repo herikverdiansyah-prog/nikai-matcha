@@ -1,0 +1,104 @@
+/* public/css/auth.css */
+body {
+    background-color: #FDFBF7;
+    color: #2D4A3E;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-login {
+    background: #ffffff;
+    border: 2px solid #2D4A3E;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(45, 74, 62, 0.08);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.card-login h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c2cdc8;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #2D4A3E;
+    background-color: #FDFBF7;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2D4A3E;
+    background-color: #ffffff;
+}
+
+.btn-matcha {
+    background-color: #2D4A3E;
+    color: #FDFBF7;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-matcha:hover {
+    background-color: #1e332b;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.text-matcha {
+    color: #2D4A3E;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-matcha:hover {
+    text-decoration: underline;
+}
+
+.alert-danger {
+    background-color: #fce8e6;
+    color: #a80000;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #f5c2c2;
+}
